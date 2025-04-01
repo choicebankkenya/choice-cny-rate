@@ -14,7 +14,7 @@
             color: #333;
         }
         header {
-            background-color: #0056b3;
+            background-color: #003366;
             color: white;
             padding: 20px;
             text-align: center;
@@ -29,10 +29,7 @@
         .sub-title {
             font-size: 16px;
             margin: 5px 0;
-            color: white; /* Added this line to make both sub-titles white */
-        }
-        .chinese {
-            color: white; /* Specifically ensure Chinese text is white */
+            color: white;
         }
         .rates-container {
             background-color: white;
@@ -45,7 +42,7 @@
             display: flex;
             justify-content: space-between;
             padding: 15px;
-            margin: 10px 0;
+            margin: 10px 0 0 0;
             background-color: #f9f9f9;
             border-left: 4px solid #0056b3;
         }
@@ -80,8 +77,27 @@
             padding: 15px;
             border-radius: 5px;
         }
+        .contact p {
+            margin: 5px 0;
+            line-height: 1.2;
+        }
         .bilingual {
             display: block;
+        }
+        .history-date {
+            line-height: 1.3;
+        }
+        .chinese-date {
+            color: #666;
+            font-size: 14px;
+            display: block;
+            margin-top: 3px;
+        }
+        #current-date {
+            font-size: 14px;
+            color: #666;
+            display: block;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -89,31 +105,31 @@
     <header>
         <div class="main-title">Choice Bank CNY Express</div>
         <div class="sub-title">Real-time RMB exchange rate</div>
-        <div class="sub-title chinese">人民币跨境支付实时汇率</div>
+        <div class="sub-title">人民币跨境支付实时汇率</div>
     </header>
     
     <div class="rates-container">
         <h2>
             <span class="bilingual">Today's Rate / 今日汇率</span>
-            <span class="chinese" id="current-date"></span>
+            <span id="current-date"></span>
         </h2>
         
         <div class="rate-card">
             <div class="currency">
                 <span class="bilingual">Kenyan Shilling (KES) / 肯先令</span>
             </div>
-            <div class="rate">1 CNY = 20.35 KES</div>
+            <div class="rate">1 CNY = 17.85 KES</div>
         </div>
         
         <div class="rate-card">
             <div class="currency">
                 <span class="bilingual">US Dollar (USD) / 美金</span>
             </div>
-            <div class="rate">1 CNY = 0.14 USD</div>
+            <div class="rate">1 CNY = 0.138 USD</div>
         </div>
         
         <div class="update-info">
-            <span class="bilingual">Last Updated: 2025年4月15日 09:00 / 最后更新时间</span>
+            <span id="last-updated"></span>
         </div>
     </div>
     
@@ -131,28 +147,43 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Apr 14, 2025 (Mon)<br><span class="chinese">2025年4月14日 (周一)</span></td>
-                    <td>20.30</td>
-                    <td>0.141</td>
+                    <td class="history-date">
+                        Mar 28, 2025 (Fri)
+                        <span class="chinese-date">2025年3月28日 (周五)</span>
+                    </td>
+                    <td>17.87</td>
+                    <td>0.138</td>
                 </tr>
                 <tr>
-                    <td>Apr 13, 2025 (Sun)<br><span class="chinese">2025年4月13日 (周日)</span></td>
-                    <td>20.28</td>
-                    <td>0.142</td>
+                    <td class="history-date">
+                        Mar 27, 2025 (Thu)
+                        <span class="chinese-date">2025年3月27日 (周四)</span>
+                    </td>
+                    <td>17.89</td>
+                    <td>0.138</td>
                 </tr>
                 <tr>
-                    <td>Apr 12, 2025 (Sat)<br><span class="chinese">2025年4月12日 (周六)</span></td>
-                    <td>20.25</td>
-                    <td>0.140</td>
+                    <td class="history-date">
+                        Mar 26, 2025 (Wed)
+                        <span class="chinese-date">2025年3月26日 (周三)</span>
+                    </td>
+                    <td>17.89</td>
+                    <td>0.138</td>
                 </tr>
                 <tr>
-                    <td>Apr 11, 2025 (Fri)<br><span class="chinese">2025年4月11日 (周五)</span></td>
-                    <td>20.32</td>
-                    <td>0.139</td>
+                    <td class="history-date">
+                        Mar 25, 2025 (Tue)
+                        <span class="chinese-date">2025年3月25日 (周二)</span>
+                    </td>
+                    <td>17.89</td>
+                    <td>0.138</td>
                 </tr>
                 <tr>
-                    <td>Apr 10, 2025 (Thu)<br><span class="chinese">2025年4月10日 (周四)</span></td>
-                    <td>20.29</td>
+                    <td class="history-date">
+                        Mar 24, 2025 (Mon)
+                        <span class="chinese-date">2025年3月24日 (周一)</span>
+                    </td>
+                    <td>17.91</td>
                     <td>0.138</td>
                 </tr>
             </tbody>
@@ -163,24 +194,39 @@
         <h3>
             <span class="bilingual">Contact Us / 联系我们</span>
         </h3>
-        <p><span class="bilingual">Phone/WhatsApp: +254 713639180 / 电话/WhatsApp: +254 713639180</span></p>
-        <p><span class="bilingual">WeChat: Choicebank / 微信: Choicebank</span></p>
-        <p><span class="bilingual">Address: 2nd Floor, Riverside Square, Nairobi / 地址: 内罗毕Riverside Square 2层</span></p>
+        <p>Phone/WhatsApp: +254 713639180</p>
+        <p>WeChat: Choicebank</p>
+        <p>Address: 2nd Floor, Riverside Square, Nairobi</p>
     </div>
 
     <script>
-        // 自动显示当前日期 (英文在前)
+        // 设置当前日期（小号字体）
         const now = new Date();
-        const chineseOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-        const englishOptions = { 
+        
+        // 英文日期格式：Tue, Apr 1, 2025
+        const englishDate = now.toLocaleDateString('en-US', { 
+            weekday: 'short', 
             year: 'numeric', 
             month: 'short', 
+            day: 'numeric' 
+        });
+        
+        // 中文日期格式：2025年4月1日星期二
+        const chineseDate = now.toLocaleDateString('zh-CN', { 
+            year: 'numeric', 
+            month: 'long', 
             day: 'numeric', 
-            weekday: 'short' 
-        };
-        const englishDate = now.toLocaleDateString('en-US', englishOptions);
-        const chineseDate = now.toLocaleDateString('zh-CN', chineseOptions);
+            weekday: 'long' 
+        });
+        
+        // 显示当前日期
         document.getElementById('current-date').textContent = `${englishDate} / ${chineseDate}`;
+        
+        // 自动生成最后更新时间（英文在前）
+        const updateTime = new Date();
+        const updateEnglish = `Last Updated: ${updateTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}`;
+        const updateChinese = `最后更新时间: ${updateTime.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', hour12: true })}`;
+        document.getElementById('last-updated').textContent = `${updateEnglish} / ${updateChinese}`;
     </script>
 </body>
 </html>
